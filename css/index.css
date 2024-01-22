@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  background-color: #09111e;
+}
+main .container {
+  max-width: 1300px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+main .container .contactCreateForm {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+main .container .contactCreateForm .formTitle {
+  align-self: flex-end;
+  height: 30px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #fff;
+}
+main .container .contactCreateForm .inputBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .container .contactCreateForm .inputBox label {
+  width: 100px;
+  font-size: 22px;
+  text-align: end;
+  color: #fff;
+  letter-spacing: 1px;
+}
+main .container .contactCreateForm .inputBox input {
+  width: 270px;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #09111e;
+  letter-spacing: 1px;
+}
+main .container .contactCreateForm .inputBox.buttonBox {
+  display: flex;
+  justify-content: flex-end;
+}
+main .container .contactCreateForm .inputBox.buttonBox button {
+  border: none;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 5px 10px;
+  color: #09111e;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .container .contactCreateForm .inputBox.buttonBox button:hover {
+  background-color: #09111e;
+  color: #fff;
+}
+main .container .contactTable {
+  width: 850px;
+  margin: 50px 0 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.3137254902);
+}
+main .container .contactTable thead {
+  width: 100%;
+}
+main .container .contactTable thead tr {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3137254902);
+}
+main .container .contactTable thead tr th {
+  text-align: start;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 15px 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+main .container .contactTable tbody {
+  width: 100%;
+}
+main .container .contactTable tbody tr {
+  width: 100%;
+}
+main .container .contactTable tbody tr:nth-child(even) {
+  background-color: #202020;
+}
+main .container .contactTable tbody tr td {
+  text-align: start;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 10px 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+main .container .contactTable tbody tr td button {
+  background-color: #fff;
+  width: 40px;
+  height: 30px;
+  border-radius: 10px;
+  border: transparent;
+  outline: transparent;
+  cursor: pointer;
+}
+main .container .contactTable tbody tr td button img {
+  padding-top: 5px;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+main .container .cardsBox {
+  display: none;
+}
+
+@media (max-width: 1301px) {
+  main .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  main .container .contactCreateForm {
+    width: 330px;
+  }
+  main .container .contactCreateForm .inputBox label {
+    width: 80px;
+  }
+  main .container .contactCreateForm .inputBox input {
+    width: 230px;
+  }
+}
+@media (max-width: 1220px) {
+  main .container {
+    width: 900px;
+    min-height: 100vh;
+    padding: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  main .container .contactCreateForm {
+    width: 900px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  main .container .contactCreateForm .formTitle {
+    display: none;
+  }
+  main .container .contactCreateForm .inputBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  main .container .contactCreateForm .inputBox label {
+    width: auto;
+    font-size: 20px;
+    text-align: start;
+  }
+  main .container .contactCreateForm .inputBox input {
+    width: 150px;
+    font-size: 16px;
+  }
+  main .container .contactCreateForm .inputBox.buttonBox {
+    display: flex;
+    align-self: flex-end;
+  }
+  main .container .contactTable {
+    width: 900px;
+    margin: 50px 0 0;
+  }
+}
+@media (max-width: 900px) {
+  main .container {
+    width: 550px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  main .container .contactCreateForm {
+    width: 550px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  main .container .contactCreateForm .inputBox {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  main .container .contactCreateForm .inputBox label {
+    width: auto;
+    font-size: 18px;
+    text-align: start;
+  }
+  main .container .contactCreateForm .inputBox input {
+    width: 90px;
+    font-size: 14px;
+  }
+  main .container .contactCreateForm .inputBox.buttonBox button {
+    font-size: 15px;
+  }
+  main .container .contactTable {
+    width: 550px;
+    margin: 50px auto 0;
+  }
+  main .container .contactTable thead tr th {
+    font-size: 16px;
+    padding: 10px 5px 5px;
+  }
+  main .container .contactTable tbody tr td {
+    font-size: 14px;
+    padding: 10px 5px 5px;
+  }
+  main .container .contactTable tbody tr td:last-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-top: 11px;
+  }
+  main .container .contactTable tbody tr td button {
+    width: 35px;
+    height: 25px;
+    border-radius: 7px;
+  }
+}
+@media (max-width: 600px) {
+  main .container {
+    max-width: 400px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  main .container .contactCreateForm {
+    display: none;
+  }
+  main .container .contactTable {
+    display: none;
+  }
+  main .container .cardsBox {
+    display: block;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  main .container .cardsBox .card {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3137254902);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main .container .cardsBox .card .number {
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+  }
+  main .container .cardsBox .card .details {
+    width: 100%;
+    padding: 0 20px;
+  }
+  main .container .cardsBox .card .details .cardRow {
+    margin-bottom: 5px;
+  }
+  main .container .cardsBox .card .details .cardRow span {
+    color: #fff;
+    font-size: 16px;
+  }
+  main .container .cardsBox .card .details .cardRow span.key {
+    display: inline-block;
+    margin-right: 20px;
+    width: 60px;
+    font-weight: 500;
+    text-align: end;
+  }
+  main .container .cardsBox .card .details .cardRow span.value {
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  main .container .cardsBox .card .actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main .container .cardsBox .card .actions button {
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    color: #09111e;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+  }
+  main .container .cardsBox .card .actions button.editBtn {
+    background-color: #e6b400;
+    border: 1px solid #e6b400;
+  }
+  main .container .cardsBox .card .actions button.deleteBtn {
+    background-color: #a70000;
+    border: 1px solid #a70000;
+  }
+  main .container .cardsBox .card .actions button:hover.editBtn {
+    background-color: #09111e;
+    color: #e6b400;
+  }
+  main .container .cardsBox .card .actions button:hover.deleteBtn {
+    background-color: #09111e;
+    color: #a70000;
+  }
+}
+@media (max-width: 450px) {
+  main .container {
+    max-width: 280px;
+    min-height: 100vh;
+    padding-top: 50px;
+  }
+  main .container .cardsBox {
+    gap: 20px;
+  }
+  main .container .cardsBox .card {
+    width: 280px;
+    padding: 15px;
+  }
+  main .container .cardsBox .card .details {
+    padding: 0 10px;
+  }
+  main .container .cardsBox .card .details .cardRow span {
+    font-size: 14px;
+  }
+  main .container .cardsBox .card .details .cardRow span.key {
+    width: 50px;
+    margin-right: 10px;
+  }
+  main .container .cardsBox .card .details .cardRow span.value {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  main .container .cardsBox .card .actions button {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+}
