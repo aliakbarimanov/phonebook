@@ -1,0 +1,26 @@
+{
+    "categories": [
+      {
+        "name": "shop",
+        "phone": "123"
+      },
+      {
+        "name": "restaurant",
+        "phone": "456"
+      },
+      {
+        "name": "home",
+        "phone": "789"
+      }
+    ],
+    
+    "products": [
+      {
+        "price": "3.99"
+      },
+      {
+        "price": "8.79"
+      }
+    ]
+  }
+  
