@@ -11,6 +11,7 @@ main {
   background-color: #09111e;
 }
 main .container {
+  position: relative;
   max-width: 1300px;
   min-height: 100vh;
   margin: 0 auto;
@@ -123,9 +124,10 @@ main .container .contactTable tbody tr td button {
   width: 40px;
   height: 30px;
   border-radius: 10px;
-  border: transparent;
+  border: 1px solid transparent;
   outline: transparent;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 main .container .contactTable tbody tr td button img {
   padding-top: 5px;
@@ -133,8 +135,52 @@ main .container .contactTable tbody tr td button img {
   height: 80%;
   object-fit: contain;
 }
+main .container .contactTable tbody tr td button:hover {
+  background-color: #09111e;
+  border: 1px solid #fff;
+}
 main .container .cardsBox {
   display: none;
+}
+main .container .deleteModal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.0196078431);
+  backdrop-filter: blur(8px);
+}
+main .container .deleteModal .modalRow {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+main .container .deleteModal .modalRow button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .container .deleteModal .modalRow button:hover {
+  background-color: #09111e;
+  color: #fff;
+  border: 1px solid #fff;
+}
+main .container .deleteModal .modalRow.question, main .container .deleteModal .modalRow.actions {
+  text-align: end;
+}
+main .container .deleteModal.active {
+  display: block;
 }
 
 @media (max-width: 1301px) {
@@ -350,6 +396,17 @@ main .container .cardsBox {
   main .container .cardsBox .card .actions button:hover.deleteBtn {
     background-color: #09111e;
     color: #a70000;
+  }
+  main .container .deleteModal {
+    width: 280px;
+    padding: 20px;
+  }
+  main .container .deleteModal .modalRow {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  main .container .deleteModal .modalRow button {
+    font-size: 14px;
   }
 }
 @media (max-width: 450px) {

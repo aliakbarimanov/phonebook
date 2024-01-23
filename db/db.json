@@ -1,26 +1,11 @@
 {
-    "categories": [
-      {
-        "name": "shop",
-        "phone": "123"
-      },
-      {
-        "name": "restaurant",
-        "phone": "456"
-      },
-      {
-        "name": "home",
-        "phone": "789"
-      }
-    ],
-    
-    "products": [
-      {
-        "price": "3.99"
-      },
-      {
-        "price": "8.79"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": "209d",
+      "name": "Lale",
+      "surname": "Memmedova",
+      "phone": "055 785 78 78",
+      "mail": "memmedova@mialcc.ds"
+    }
+  ]
+}

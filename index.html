@@ -9,49 +9,51 @@
   <body>
     <main>
       <div class="container">
-        <form class="contactCreateForm">
+        <form id="contactCreateForm" class="contactCreateForm">
           <h2 class="formTitle">Create contact</h2>
           <div class="inputBox">
-            <label for="accountName">Name:</label>
+            <label for="inputName">Name:</label>
             <input
               type="text"
-              name="accountName"
-              id="accountName"
-              class="accountName"
+              name="inputName"
+              id="inputName"
+              class="inputName"
               autocomplete="off"
             />
           </div>
           <div class="inputBox">
-            <label for="accountSurname">Surname:</label>
+            <label for="inputSurname">Surname:</label>
             <input
               type="text"
-              name="accountSurname"
-              id="accountSurname"
-              class="accountSurname"
+              name="inputSurname"
+              id="inputSurname"
+              class="inputSurname"
               autocomplete="off"
             />
           </div>
           <div class="inputBox">
-            <label for="accountPhone">Phone:</label>
+            <label for="inputPhone">Phone:</label>
             <input
               type="text"
-              name="accountPhone"
-              id="accountPhone"
-              class="accountPhone"
+              name="inputPhone"
+              id="inputPhone"
+              class="inputPhone"
               autocomplete="off"
             />
           </div>
           <div class="inputBox">
-            <label for="accountMail">Mail:</label>
+            <label for="inputMail">Mail:</label>
             <input
               type="email"
-              name="accountMail"
-              id="accountMail"
-              class="accountMail"
+              name="inputMail"
+              id="inputMail"
+              class="inputMail"
               autocomplete="off"
             />
           </div>
-          <div class="inputBox buttonBox"><button>Create</button></div>
+          <div class="inputBox buttonBox">
+            <button id="createBtn" class="createBtn">Create</button>
+          </div>
         </form>
         <table class="contactTable">
           <thead>
@@ -64,158 +66,7 @@
               <th>Actions:</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>2.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>3.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>4.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>5.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>6.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>7.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>8.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>9.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>10.</td>
-              <td>Aliakbar</td>
-              <td>Imanov</td>
-              <td>+994 70 558 54 88</td>
-              <td>aliakbar.imanov@gmail.com</td>
-              <td>
-                <button>
-                  <img src="./images/pencil.svg" alt="Edit icon" />
-                </button>
-                <button>
-                  <img src="./images/trash.svg" alt="Trash icon" />
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="tableBody" class="tableBody"></tbody>
         </table>
         <div class="cardsBox">
           <div class="card">
@@ -268,6 +119,17 @@
               <button class="deleteBtn">Delete</button>
             </div>
           </div>
+        </div>
+        <div id="deleteModal" class="deleteModal">
+          <p class="modalRow">Name</p>
+          <p class="modalRow">Surname</p>
+          <p class="modalRow">45678987654</p>
+          <p class="modalRow">alalak@fdv.com</p>
+          <p class="modalRow question">Melumatlari silmeye eminsinizmi?</p>
+          <p class="modalRow actions">
+            <button>Yes</button>
+            <button>Cancel</button>
+          </p>
         </div>
       </div>
     </main>
