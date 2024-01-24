@@ -8,7 +8,53 @@
   </head>
   <body>
     <main>
-      <div class="container">
+      <div id="container" class="container">
+        <form class="mobileCreateForm">
+          <h2 class="mobileFormTitle">Create contact</h2>
+          <div class="inputBox">
+            <label for="mobileInputName">Name:</label>
+            <input
+              type="text"
+              name="mobileInputName"
+              id="mobileInputName"
+              class="mobileInputName"
+              autocomplete="off"
+            />
+          </div>
+          <div class="inputBox">
+            <label for="mobileInputSurname">Surname:</label>
+            <input
+              type="text"
+              name="mobileInputSurname"
+              id="mobileInputSurname"
+              class="mobileInputSurname"
+              autocomplete="off"
+            />
+          </div>
+          <div class="inputBox">
+            <label for="mobileInputPhone">Phone:</label>
+            <input
+              type="text"
+              name="mobileInputPhone"
+              id="mobileInputPhone"
+              class="mobileInputPhone"
+              autocomplete="off"
+            />
+          </div>
+          <div class="inputBox">
+            <label for="mobileInputMail">Mail:</label>
+            <input
+              type="email"
+              name="mobileInputMail"
+              id="mobileInputMail"
+              class="mobileInputMail"
+              autocomplete="off"
+            />
+          </div>
+          <div class="inputBox buttonBox">
+            <button id="createBtn" class="createBtn">Create</button>
+          </div>
+        </form>
         <form id="contactCreateForm" class="contactCreateForm">
           <h2 class="formTitle">Create contact</h2>
           <div class="inputBox">
@@ -68,69 +114,7 @@
           </thead>
           <tbody id="tableBody" class="tableBody"></tbody>
         </table>
-        <div class="cardsBox">
-          <div class="card">
-            <p class="number">1.</p>
-            <div class="details">
-              <div class="cardRow">
-                <span class="key">Name:</span>
-                <span class="value">Aliakbar</span>
-              </div>
-              <div class="cardRow">
-                <span class="key">Surname:</span>
-                <span class="value">Imanov</span>
-              </div>
-              <div class="cardRow">
-                <span class="key">Phone:</span>
-                <span class="value">+994 70 558 54 88</span>
-              </div>
-              <div class="cardRow">
-                <span class="key">Mail:</span>
-                <span class="value">aliakbar.imanov@gmail.com</span>
-              </div>
-            </div>
-            <div class="actions">
-              <button class="editBtn">Edit</button>
-              <button class="deleteBtn">Delete</button>
-            </div>
-          </div>
-          <div class="card">
-            <p class="number">1.</p>
-            <div class="details">
-              <div class="cardRow">
-                <span class="key">Name:</span>
-                <span class="value">Aliakbar</span>
-              </div>
-              <div class="cardRow">
-                <span class="key">Surname:</span>
-                <span class="value">Imanov</span>
-              </div>
-              <div class="cardRow">
-                <span class="key">Phone:</span>
-                <span class="value">+994 70 558 54 88</span>
-              </div>
-              <div class="cardRow">
-                <span class="key">Mail:</span>
-                <span class="value">aliakbar.imanov@gmail.com</span>
-              </div>
-            </div>
-            <div class="actions">
-              <button class="editBtn">Edit</button>
-              <button class="deleteBtn">Delete</button>
-            </div>
-          </div>
-        </div>
-        <div id="deleteModal" class="deleteModal">
-          <p class="modalRow">Name</p>
-          <p class="modalRow">Surname</p>
-          <p class="modalRow">45678987654</p>
-          <p class="modalRow">alalak@fdv.com</p>
-          <p class="modalRow question">Melumatlari silmeye eminsinizmi?</p>
-          <p class="modalRow actions">
-            <button>Yes</button>
-            <button>Cancel</button>
-          </p>
-        </div>
+        <div id="cardsBox" class="cardsBox"></div>
       </div>
     </main>
     <script src="./js/main.js"></script>

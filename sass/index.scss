@@ -1,3 +1,10 @@
 @import "./reset";
 @import "./variables";
-@import "./hero";
+
+// import components
+@import "./components/editmodal";
+@import "./components/deletemodal";
+@import "./components/mobileForm";
+
+// import pages
+@import "./pages/hero";

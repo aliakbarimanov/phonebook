@@ -153,53 +153,6 @@ main {
         .cardsBox {
             display: none;
         }
-
-        .deleteModal {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            border: 1px solid #fff;
-            border-radius: 10px;
-            padding: 20px 40px;
-            background-color: #ffffff05;
-            backdrop-filter: blur(8px);
-
-            .modalRow {
-                margin-bottom: 15px;
-                font-size: 20px;
-                color: #fff;
-                letter-spacing: 1px;
-
-                button {
-                    font-size: 16px;
-                    font-weight: 600;
-                    padding: 5px 10px;
-                    border: 1px solid transparent;
-                    border-radius: 5px;
-                    color: #000;
-                    cursor: pointer;
-                    transition: all .3s ease;
-
-                    &:hover {
-                        background-color: $primary;
-                        color: #fff;
-                        border: 1px solid #fff;
-                    }
-                }
-
-                &.question,
-                &.actions {
-                    text-align: end;
-                }
-            }
-
-            &.active{
-                display: block;
-            }
-        }
     }
 }
 
@@ -375,8 +328,9 @@ main {
             margin: 0 auto;
             padding-top: 50px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
+            gap: 20px;
 
             .contactCreateForm {
                 display: none;
@@ -504,7 +458,7 @@ main {
         .container {
             max-width: 280px;
             min-height: 100vh;
-            padding-top: 50px;
+            padding-top: 20px;
 
             .cardsBox {
                 gap: 20px;
