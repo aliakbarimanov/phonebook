@@ -7,41 +7,71 @@
 }
 
 .editModal {
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-  border: 1px solid #fff;
+  border: 1px solid #f00;
   border-radius: 10px;
   padding: 20px 40px;
-  background-color: rgba(255, 255, 255, 0.0196078431);
-  backdrop-filter: blur(8px);
+  background-color: #09111e;
+  display: none;
 }
-.editModal .modalRow {
-  margin-bottom: 15px;
-  font-size: 20px;
+.editModal .editForm {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+.editModal .editForm .editBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editModal .editForm .editBox label {
+  width: 100px;
+  font-size: 22px;
+  text-align: end;
   color: #fff;
   letter-spacing: 1px;
 }
-.editModal .modalRow button {
-  font-size: 16px;
+.editModal .editForm .editBox input {
+  width: 270px;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #09111e;
+  letter-spacing: 1px;
+}
+.editModal .editForm .editBox .buttonBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+.editModal .editForm .editBox .buttonBox button {
+  border: none;
+  outline: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 18px;
   font-weight: 600;
   padding: 5px 10px;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  color: #000;
+  color: #09111e;
+  background-color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.editModal .modalRow button:hover {
+.editModal .editForm .editBox .buttonBox button:hover {
   background-color: #09111e;
   color: #fff;
-  border: 1px solid #fff;
-}
-.editModal .modalRow.question, .editModal .modalRow.actions {
-  text-align: end;
 }
 .editModal.active {
   display: block;
@@ -52,13 +82,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   transform: translate(-50%, -50%);
   width: 500px;
-  border: 1px solid #fff;
+  border: 1px solid #f00;
   border-radius: 10px;
   padding: 20px 40px;
-  background-color: rgba(255, 255, 255, 0.0196078431);
-  backdrop-filter: blur(8px);
+  background-color: #09111e;
 }
 .deleteModal .modalRow {
   margin-bottom: 15px;
@@ -81,7 +111,12 @@
   color: #fff;
   border: 1px solid #fff;
 }
-.deleteModal .modalRow.question, .deleteModal .modalRow.actions {
+.deleteModal .modalRow .question, .deleteModal .modalRow .actions {
+  width: 100%;
+  margin: 15px 0;
+  font-size: 20px;
+  color: #f00;
+  letter-spacing: 1px;
   text-align: end;
 }
 .deleteModal.active {

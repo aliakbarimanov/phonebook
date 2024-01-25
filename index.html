@@ -115,6 +115,56 @@
           <tbody id="tableBody" class="tableBody"></tbody>
         </table>
         <div id="cardsBox" class="cardsBox"></div>
+        <div id="editModal" class="editModal">
+          <form id="editForm" class="editForm">
+            <div class="editBox">
+              <label for="editInputName">Name:</label>
+              <input
+                type="text"
+                name="editInputName"
+                id="editInputName"
+                class="editInputName"
+                autocomplete="off"
+              />
+            </div>
+            <div class="editBox">
+              <label for="editInputSurname">Surname:</label>
+              <input
+                type="text"
+                name="editInputSurname"
+                id="editInputSurname"
+                class="editInputSurname"
+                autocomplete="off"
+              />
+            </div>
+            <div class="editBox">
+              <label for="editInputPhone">Phone:</label>
+              <input
+                type="text"
+                name="editInputPhone"
+                id="editInputPhone"
+                class="editInputPhone"
+                autocomplete="off"
+              />
+            </div>
+            <div class="editBox">
+              <label for="editInputMail">Mail:</label>
+              <input
+                type="email"
+                name="editInputMail"
+                id="editInputMail"
+                class="editInputMail"
+                autocomplete="off"
+              />
+            </div>
+            <div class="editBox">
+              <div class="buttonBox">
+                <button id="updateBtn" class="updateBtn">Update</button>
+                <button id="cancelBtn" class="cancelBtn">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </main>
     <script src="./js/main.js"></script>

@@ -1,25 +1,11 @@
 {
   "users": [
     {
-      "id": "209d",
-      "name": "Lale",
-      "surname": "Memmedova",
-      "phone": "055 785 78 78",
-      "mail": "memmedova@mialcc.ds"
-    },
-    {
-      "id": "d7fc",
-      "name": "Hesen",
-      "surname": "Hesenov",
-      "phone": "+994 70 558 54 88",
-      "mail": "aliakbar@gamil.com"
-    },
-    {
-      "id": "2c73",
-      "name": "asas",
-      "surname": "asas",
-      "phone": "1234",
-      "mail": "32dx@d.com"
+      "name": "Kamranas",
+      "surname": "Kamranzade",
+      "phone": "+9948485698",
+      "mail": "kamran@code.az",
+      "id": "69cb"
     }
   ]
 }

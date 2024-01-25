@@ -1,46 +1,115 @@
-.editModal{
-    display: none;
+.editModal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 500px;
-    border: 1px solid #fff;
+    border: 1px solid #f00;
     border-radius: 10px;
     padding: 20px 40px;
-    background-color: #ffffff05;
-    backdrop-filter: blur(8px);
+    background-color: $primary;
+    display: none;
 
-    .modalRow {
-        margin-bottom: 15px;
-        font-size: 20px;
-        color: #fff;
-        letter-spacing: 1px;
+    .editForm {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
 
-        button {
-            font-size: 16px;
-            font-weight: 600;
-            padding: 5px 10px;
-            border: 1px solid transparent;
-            border-radius: 5px;
-            color: #000;
-            cursor: pointer;
-            transition: all .3s ease;
+        .editBox {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            &:hover {
-                background-color: $primary;
-                color: #fff;
-                border: 1px solid #fff;
+            label {
+                width: 100px;
+                font-size: 22px;
+                text-align: end;
+                color: $secondary;
+                letter-spacing: 1px;
             }
-        }
 
-        &.question,
-        &.actions {
-            text-align: end;
+            input {
+                width: 270px;
+                font-size: 18px;
+                padding: 5px 10px;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                color: $primary;
+                letter-spacing: 1px;
+            }
+
+            .buttonBox {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 10px;
+
+                button {
+                    border: none;
+                    outline: none;
+                    border: 1px solid $secondary;
+                    border-radius: 5px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    padding: 5px 10px;
+                    color: $primary;
+                    background-color: $secondary;
+                    cursor: pointer;
+                    transition: all .3s ease;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: $secondary;
+                    }
+                }
+            }
         }
     }
 
-    &.active{
+    &.active {
         display: block;
     }
 }
+
+// @media (max-width: 600px) {
+//     .mobileCreateForm {
+//         display: flex;
+//     }
+// }
+
+// @media (max-width: 450px) {
+//     .mobileCreateForm {
+//         width: 280px;
+//         gap: 10px;
+//         padding: 15px;
+
+//         .mobileFormTitle {
+//             height: auto;
+//             font-size: 18px;
+//         }
+
+//         .inputBox {
+//             label {
+//                 font-size: 15px;
+//             }
+
+//             input {
+//                 width: 140px;
+//                 font-size: 14px;
+//             }
+
+//             &.buttonBox {
+//                 button {
+//                     font-size: 16px;
+//                     font-weight: 500;
+//                 }
+//             }
+//         }
+//     }
+// }

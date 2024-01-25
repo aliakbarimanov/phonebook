@@ -1,9 +1,11 @@
 const BASE_API = "http://localhost:3000/users";
+const container = document.querySelector("#container");
+
 let allData = [];
+let globalId;
 
 
-// Get all data
-
+// Get All Data (READ)
 async function getAllData(url) {
     const response = await fetch(url);
     const data = await response.json();
@@ -72,9 +74,7 @@ function fillTable(data) {
 getAllData(BASE_API);
 
 
-
-// POST new data
-
+// POST New Data (CREATE)
 let valueName = "";
 let valueSurname = "";
 let valuePhone = "";
@@ -103,47 +103,107 @@ document.querySelector("#contactCreateForm").addEventListener("submit", async (e
 });
 
 
-const container = document.querySelector("#container");
-// Delete data
+// Remove Data (DELETE)
+const deleteRow = (id) => {
+    globalId = id;
+    let singleData = allData.find(data => data.id === id);
 
-// const deleteRow = (id) => {
-//     let singleData = allData.find(data => data.id === id);
+    const deleteModal = document.createElement("div");
+    deleteModal.classList.add("deleteModal", "active");
 
-//     const deleteModal = document.createElement("div");
-//     deleteModal.classList.add("active");
+    const dataArray = Object.entries(singleData);
+    for (let i = 1; i < dataArray.length; i++) {
 
-//     const modalRow = document.createElement("p");
-//     modalRow.classList.add("modalRow");
+        const modalRow = document.createElement("div");
+        modalRow.classList.add("modalRow");
 
-//     for (const [key, value] of Object.entries(singleData)) {
-//         modalRow.value = value;
-//         deleteModal.innerHTML += modalRow;
-//     }
-//     container.appendChild("deleteModal");
+        modalRow.innerText = dataArray[i][1];
+        deleteModal.appendChild(modalRow);
+    }
 
-// }
+    container.appendChild(deleteModal);
 
-// fetch(`${BASE_API}/${id}`, { method: "DELETE" });
+    const modalRow = document.createElement("div");
+    modalRow.classList.add("modalRow");
+    modalRow.innerHTML =
+        `
+        <div class="question">Are you sure to delete this data?</div>
+        <div class="actions">
+            <button onClick="deleteConfirm()">Yes</button>
+            <button onClick="deactiveModal()">Cancel</button>
+        </div>
+    `;
+    deleteModal.appendChild(modalRow);
+}
+
+async function deleteConfirm() {
+
+    if (globalId) {
+        await fetch(`${BASE_API}/${globalId}`, { method: "DELETE" })
+            .then(() => alert("Data was deleted!!"))
+            .catch(error => console.warn(error));
+    } else {
+        console.warn("Id is not defined.");
+    }
+};
+
+function deactiveModal() {
+    deleteModal = document.querySelector(".deleteModal");
+
+    container.removeChild(deleteModal);
+}
 
 
-// Update data
+// Edit Data (UPDATE)
+function editRow(id) {
+    let singleData = allData.find(data => data.id === id);
 
-// function editRow(id) {
-//     let singleData = allData.find(data => data.id === id);
-//     console.log(singleData);
+    const editModal = document.querySelector("#editModal");
+    editModal.classList.add("active");
 
-//     const editModal = document.createElement("div");
-//     editModal.classList.add("editModal", "active");
-//     const modalRow = document.createElement("p");
-//     modalRow.classList.add("modalRow");
+    const editInputName = document.querySelector("#editInputName");
+    const editInputSurname = document.querySelector("#editInputSurname");
+    const editInputPhone = document.querySelector("#editInputPhone");
+    const editInputMail = document.querySelector("#editInputMail");
 
-//     for (const [key, value] of Object.entries(singleData)) {
+    let valueEditedName = singleData.name;
+    let valueEditedSurname = singleData.surname;
+    let valueEditedPhone = singleData.phone;
+    let valueEditedMail = singleData.mail;
 
-//         modalRow.innerText = value;
-//         // editModal.innerHTML += modalRow;
-//     }
+    editInputName.value = singleData.name;
+    editInputSurname.value = singleData.surname;
+    editInputPhone.value = singleData.phone;
+    editInputMail.value = singleData.mail;
 
+    editInputName.addEventListener("change", (e) => valueEditedName = e.target.value);
+    editInputSurname.addEventListener("change", (e) => valueEditedSurname = e.target.value);
+    editInputPhone.addEventListener("change", (e) => valueEditedPhone = e.target.value);
+    editInputMail.addEventListener("change", (e) => valueEditedMail = e.target.value);
 
-//     editModal.appendChild(modalRow);
-//     container.appendChild(editModal);
-// }
+    document.querySelector("#cancelBtn").addEventListener("click", (e) => {
+        e.preventDefault();
+        editModal.classList.remove("active");
+    });
+
+    document.querySelector("#updateBtn").addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const body = {
+            name: valueEditedName,
+            surname: valueEditedSurname,
+            phone: valueEditedPhone,
+            mail: valueEditedMail,
+        }
+
+        await fetch(`${BASE_API}/${id}`,
+            {
+                method: "PUT",
+                body: JSON.stringify(body),
+            })
+            .then(response => alert("Data succesfully updated!"))
+            .catch(error => console.warn(error));
+
+    });
+
+}
