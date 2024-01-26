@@ -18,7 +18,7 @@ main {
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
-            gap: 20px;
+            gap: 30px;
 
             .formTitle {
                 align-self: flex-end;
@@ -30,6 +30,7 @@ main {
 
             .inputBox {
                 width: 100%;
+                position: relative;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -74,6 +75,20 @@ main {
                             background-color: $primary;
                             color: $secondary;
                         }
+                    }
+                }
+
+                .errorMsg{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    transform: translate(0, -100%);
+                    font-size: 15px;
+                    color: #f00;
+                    display: none;
+    
+                    &.active{
+                        display: block;
                     }
                 }
             }

@@ -85,21 +85,69 @@ document.querySelector("#inputSurname").addEventListener("change", (e) => valueS
 document.querySelector("#inputPhone").addEventListener("change", (e) => valuePhone = e.target.value);
 document.querySelector("#inputMail").addEventListener("change", (e) => valueMail = e.target.value);
 
+
 document.querySelector("#contactCreateForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    body = {
-        name: valueName,
-        surname: valueSurname,
-        phone: valuePhone,
-        mail: valueMail,
+    // Create form validation
+    let nameError;
+    let surnameError;
+    let phoneError;
+    let mailError;
+
+    valueName = valueName.trim();
+    valueSurname = valueSurname.trim();
+    valuePhone = valuePhone.trim();
+    valueMail = valueMail.trim();
+
+    if (valueName.length === 0) {
+        nameError = true;
+        document.querySelector(".errorMsgName").classList.add("active");
+    } else {
+        nameError = false;
+        document.querySelector(".errorMsgName").classList.remove("active");
     }
 
-    const response = await fetch(BASE_API,
-        {
-            method: "POST",
-            body: JSON.stringify(body),
-        });
+    if (valueSurname.length === 0) {
+        surnameError = true;
+        document.querySelector(".errorMsgSurname").classList.add("active");
+    } else {
+        surnameError = false;
+        document.querySelector(".errorMsgSurname").classList.remove("active");
+    }
+
+    if ((valuePhone.length === 0)) {
+        phoneError = true;
+        document.querySelector(".errorMsgPhone").classList.add("active");
+    } else {
+        phoneError = false;
+        document.querySelector(".errorMsgPhone").classList.remove("active");
+    }
+
+    if (valueMail.length === 0) {
+        mailError = true;
+        document.querySelector(".errorMsgMail").classList.add("active");
+    } else {
+        mailError = false;
+        document.querySelector(".errorMsgMail").classList.remove("active");
+    }
+
+    if (nameError === false && surnameError === false && phoneError === false && mailError === false) {
+
+        body = {
+            name: valueName,
+            surname: valueSurname,
+            phone: valuePhone,
+            mail: valueMail,
+        }
+
+        const response = await fetch(BASE_API,
+            {
+                method: "POST",
+                body: JSON.stringify(body),
+            });
+    }
+
 });
 
 
@@ -112,7 +160,7 @@ const deleteRow = (id) => {
     deleteModal.classList.add("deleteModal", "active");
 
     const dataArray = Object.entries(singleData);
-    for (let i = 1; i < dataArray.length; i++) {
+    for (let i = 0; i < dataArray.length - 1; i++) {
 
         const modalRow = document.createElement("div");
         modalRow.classList.add("modalRow");

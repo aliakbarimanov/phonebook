@@ -77,39 +77,42 @@
     }
 }
 
-// @media (max-width: 600px) {
-//     .mobileCreateForm {
-//         display: flex;
-//     }
-// }
+@media (max-width: 600px) {
+    .editModal {
+        width: 280px;
+        padding: 10px;
 
-// @media (max-width: 450px) {
-//     .mobileCreateForm {
-//         width: 280px;
-//         gap: 10px;
-//         padding: 15px;
+        .editForm {
+            width: 280px;
+            gap: 10px;
+            padding: 15px;
 
-//         .mobileFormTitle {
-//             height: auto;
-//             font-size: 18px;
-//         }
+            .editBox {
+                justify-content: flex-start;
+                gap: 15px;
 
-//         .inputBox {
-//             label {
-//                 font-size: 15px;
-//             }
+                label {
+                    width: 70px;
+                    font-size: 14px;
+                }
 
-//             input {
-//                 width: 140px;
-//                 font-size: 14px;
-//             }
+                input {
+                    width: 150px;
+                    font-size: 14px;
+                }
 
-//             &.buttonBox {
-//                 button {
-//                     font-size: 16px;
-//                     font-weight: 500;
-//                 }
-//             }
-//         }
-//     }
-// }
+                .buttonBox {
+                    margin-top: 10px;
+                    padding-right: 15px;
+
+                    button {
+                        font-size: 14px;
+                    }
+                }
+
+            }
+        }
+
+        display: none;
+    }
+}

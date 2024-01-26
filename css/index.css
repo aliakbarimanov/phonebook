@@ -77,6 +77,37 @@
   display: block;
 }
 
+@media (max-width: 600px) {
+  .editModal {
+    width: 280px;
+    padding: 10px;
+    display: none;
+  }
+  .editModal .editForm {
+    width: 280px;
+    gap: 10px;
+    padding: 15px;
+  }
+  .editModal .editForm .editBox {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  .editModal .editForm .editBox label {
+    width: 70px;
+    font-size: 14px;
+  }
+  .editModal .editForm .editBox input {
+    width: 150px;
+    font-size: 14px;
+  }
+  .editModal .editForm .editBox .buttonBox {
+    margin-top: 10px;
+    padding-right: 15px;
+  }
+  .editModal .editForm .editBox .buttonBox button {
+    font-size: 14px;
+  }
+}
 .deleteModal {
   display: none;
   position: absolute;
@@ -231,7 +262,7 @@ main .container .contactCreateForm {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 20px;
+  gap: 30px;
 }
 main .container .contactCreateForm .formTitle {
   align-self: flex-end;
@@ -242,6 +273,7 @@ main .container .contactCreateForm .formTitle {
 }
 main .container .contactCreateForm .inputBox {
   width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -283,6 +315,18 @@ main .container .contactCreateForm .inputBox.buttonBox button {
 main .container .contactCreateForm .inputBox.buttonBox button:hover {
   background-color: #09111e;
   color: #fff;
+}
+main .container .contactCreateForm .inputBox .errorMsg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, -100%);
+  font-size: 15px;
+  color: #f00;
+  display: none;
+}
+main .container .contactCreateForm .inputBox .errorMsg.active {
+  display: block;
 }
 main .container .contactTable {
   width: 850px;
