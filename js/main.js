@@ -29,16 +29,24 @@ searchInp.addEventListener("keyup", async () => {
 
 
 
+// Pagination
+if(allData.length >= 10){
+    document.querySelector(".paginationBox").classList.add("active");
+}
+
+
+
 // Render Data
 function renderData() {
 
-    console.log(allData)
+    const tableBody = document.querySelector("#tableBody");
+    const cardsBox = document.querySelector("#cardsBox");
+    tableBody.innerHTML = "";
+    cardsBox.innerHTML = "";
 
     allData.map((user, ind) => {
 
-        // fill table
-        const tableBody = document.querySelector("#tableBody");
-        
+        // fill table        
         tableBody.innerHTML +=
             `
             <td>${ind + 1}.</td>
@@ -57,7 +65,6 @@ function renderData() {
         `;
 
         // fill mobile cards
-        const cardsBox = document.querySelector("#cardsBox");
         cardsBox.innerHTML +=
             `
             <div class="card">

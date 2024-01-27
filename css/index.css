@@ -316,6 +316,30 @@ main .container .contactTable tbody tr td button:hover {
 main .container .cardsBox {
   display: none;
 }
+main .container .paginationBox {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  display: none;
+}
+main .container .paginationBox .paginationLink {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: #f00;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+main .container .paginationBox .paginationLink:hover {
+  color: #000;
+}
+main .container .paginationBox.active {
+  display: flex;
+}
 
 @media (max-width: 1301px) {
   main .container {
