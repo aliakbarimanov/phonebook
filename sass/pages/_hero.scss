@@ -12,6 +12,19 @@ main {
         justify-content: space-between;
         align-items: flex-start;
 
+        .searchInp {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            width: 400px;
+            padding: 10px 15px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
         .contactCreateForm {
             width: 400px;
             display: flex;
@@ -78,7 +91,7 @@ main {
                     }
                 }
 
-                .errorMsg{
+                .errorMsg {
                     position: absolute;
                     top: 0;
                     right: 0;
@@ -86,8 +99,8 @@ main {
                     font-size: 15px;
                     color: #f00;
                     display: none;
-    
-                    &.active{
+
+                    &.active {
                         display: block;
                     }
                 }
@@ -97,6 +110,7 @@ main {
         .contactTable {
             width: 850px;
             margin: 50px 0 0;
+            position: relative;
             justify-content: flex-start;
             align-items: flex-start;
             border-collapse: collapse;
@@ -199,11 +213,18 @@ main {
         .container {
             width: 900px;
             min-height: 100vh;
-            padding: 20px 0 0 20px;
+            padding: 20px 0 40px 20px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+
+            .searchInp {
+                top: 130px;
+                left: 20px;
+                width: 900px;
+                padding: 10px 15px;
+            }
 
             .contactCreateForm {
                 width: 900px;
@@ -239,13 +260,19 @@ main {
                         display: flex;
                         align-self: flex-end;
                     }
+
+                    .errorMsg {
+                        bottom: 0;
+                        transform: translate(0, 110%);
+                        font-size: 12px;
+                    }
                 }
             }
 
 
             .contactTable {
                 width: 900px;
-                margin: 50px 0 0;
+                margin: 100px 0 0;
             }
         }
     }
@@ -257,6 +284,14 @@ main {
             width: 550px;
             margin: 0 auto;
             padding: 20px 0;
+
+            .searchInp {
+                top: 110px;
+                left: 0px;
+                width: 550px;
+                padding: 10px;
+                font-size: 16px;
+            }
 
             .contactCreateForm {
                 width: 550px;
@@ -295,7 +330,7 @@ main {
 
             .contactTable {
                 width: 550px;
-                margin: 50px auto 0;
+                margin: 80px auto 0;
 
                 thead {
 
@@ -347,8 +382,81 @@ main {
             align-items: flex-start;
             gap: 20px;
 
+            .searchInp {
+                top: 340px;
+                left: 0px;
+                width: 400px;
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+
             .contactCreateForm {
-                display: none;
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: 20px;
+
+                .formTitle {
+                    align-self: flex-end;
+                    height: 30px;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: $secondary;
+                }
+
+                .inputBox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
+
+                    label {
+                        width: 100px;
+                        font-size: 15px;
+                        text-align: end;
+                        color: $secondary;
+                        letter-spacing: 1px;
+                    }
+
+                    input {
+                        width: 270px;
+                        font-size: 15px;
+                        padding: 5px 10px;
+                        border: none;
+                        outline: none;
+                        border-radius: 5px;
+                        color: $primary;
+                        letter-spacing: 1px;
+                    }
+
+                    &.buttonBox {
+                        display: flex;
+                        justify-content: flex-end;
+
+                        button {
+                            border: none;
+                            outline: none;
+                            border: 1px solid $secondary;
+                            border-radius: 5px;
+                            font-size: 15px;
+                            font-weight: 600;
+                            padding: 5px 10px;
+                            color: $primary;
+                            background-color: $secondary;
+                            cursor: pointer;
+                            transition: all .3s ease;
+
+                            &:hover {
+                                background-color: $primary;
+                                color: $secondary;
+                            }
+                        }
+                    }
+                }
             }
 
             .contactTable {
@@ -358,6 +466,7 @@ main {
             .cardsBox {
                 display: block;
                 width: 100%;
+                margin-top: 50px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -474,6 +583,43 @@ main {
             max-width: 280px;
             min-height: 100vh;
             padding-top: 20px;
+
+            .searchInp {
+                width: 280px;
+            }
+
+            .contactCreateForm {
+                width: 270px;
+                padding-top: 20px;
+                gap: 10px;
+
+                .formTitle {
+                    font-size: 15px;
+                }
+
+                .inputBox {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    label {
+                        width: 70px;
+                        font-size: 15px;
+                        text-align: end;
+                        color: $secondary;
+                        letter-spacing: 1px;
+                    }
+
+                    input {
+                        width: 170px;
+                        font-size: 15px;
+                        padding: 5px;
+                    }
+                }
+            }
 
             .cardsBox {
                 gap: 20px;

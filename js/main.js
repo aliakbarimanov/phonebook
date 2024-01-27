@@ -11,16 +11,34 @@ async function getAllData(url) {
     const data = await response.json();
 
     allData = data;
-
-    fillTable(data);
+    renderData();
 }
 
-function fillTable(data) {
 
-    data.map((user, ind) => {
+// Search function
+const searchInp = document.querySelector("#searchInp");
+
+searchInp.addEventListener("keyup", async () => {
+
+    const response = await fetch(`${BASE_API}?name=${searchInp.value}`);
+    const data = await response.json();
+
+    allData = data;
+    renderData();
+});
+
+
+
+// Render Data
+function renderData() {
+
+    console.log(allData)
+
+    allData.map((user, ind) => {
 
         // fill table
         const tableBody = document.querySelector("#tableBody");
+        
         tableBody.innerHTML +=
             `
             <td>${ind + 1}.</td>
@@ -116,7 +134,8 @@ document.querySelector("#contactCreateForm").addEventListener("submit", async (e
         document.querySelector(".errorMsgSurname").classList.remove("active");
     }
 
-    if ((valuePhone.length === 0)) {
+    const phoneRegEx = /[A-Za-z]/;
+    if ((valuePhone.length === 0) || (phoneRegEx.test(valuePhone))) {
         phoneError = true;
         document.querySelector(".errorMsgPhone").classList.add("active");
     } else {
@@ -124,7 +143,8 @@ document.querySelector("#contactCreateForm").addEventListener("submit", async (e
         document.querySelector(".errorMsgPhone").classList.remove("active");
     }
 
-    if (valueMail.length === 0) {
+    const mailRegEx = /@/;
+    if ((valueMail.length === 0) || !(mailRegEx.test(valueMail))) {
         mailError = true;
         document.querySelector(".errorMsgMail").classList.add("active");
     } else {
@@ -141,11 +161,12 @@ document.querySelector("#contactCreateForm").addEventListener("submit", async (e
             mail: valueMail,
         }
 
-        const response = await fetch(BASE_API,
-            {
-                method: "POST",
-                body: JSON.stringify(body),
-            });
+        await fetch(BASE_API, {
+            method: "POST",
+            body: JSON.stringify(body),
+        })
+            .then(() => alert("User created successfully!"))
+            .catch(err => console.log(err));
     }
 
 });
