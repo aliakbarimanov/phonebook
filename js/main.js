@@ -4,6 +4,9 @@ const container = document.querySelector("#container");
 let allData = [];
 let globalId;
 
+let startNumber = 0;
+let endNumber = 10;
+
 
 // Get All Data (READ)
 async function getAllData(url) {
@@ -12,6 +15,11 @@ async function getAllData(url) {
 
     allData = data;
     renderData();
+
+    // Pagination Buttons
+    if (allData.length > 9) {
+        document.querySelector(".paginationBox").classList.add("active");
+    }
 }
 
 
@@ -20,7 +28,7 @@ const searchInp = document.querySelector("#searchInp");
 
 searchInp.addEventListener("keyup", async () => {
 
-    const response = await fetch(`${BASE_API}?name=${searchInp.value}`);
+    const response = await fetch(`${BASE_API}?name=${searchInp.value.toLowerCase()}`);
     const data = await response.json();
 
     allData = data;
@@ -28,12 +36,20 @@ searchInp.addEventListener("keyup", async () => {
 });
 
 
-
 // Pagination
-if(allData.length >= 10){
-    document.querySelector(".paginationBox").classList.add("active");
-}
+document.querySelector("#beforeBtn").addEventListener("click", () => {
+    startNumber = startNumber - 10;
+    endNumber = endNumber - 10;
 
+    renderData();
+});
+
+document.querySelector("#afterBtn").addEventListener("click", () => {
+    startNumber = startNumber + 10;
+    endNumber = endNumber + 10;
+
+    renderData();
+});
 
 
 // Render Data
@@ -44,56 +60,57 @@ function renderData() {
     tableBody.innerHTML = "";
     cardsBox.innerHTML = "";
 
-    allData.map((user, ind) => {
 
-        // fill table        
+    for (let i = startNumber; i < endNumber; i++) {
+
+        // fill table
         tableBody.innerHTML +=
             `
-            <td>${ind + 1}.</td>
-            <td class="userName">${user.name}</td>
-            <td class="userSurname">${user.surname}</td>
-            <td class="userPhone">${user.phone}</td>
-            <td class="userMail">${user.mail}</td>
-            <td>
-            <button class="editBtn" id=${user.id} onClick={editRow(id)}>
-                <img src="./images/pencil.svg" alt="Edit icon" />
-            </button>
-            <button class="deleteBtn" id=${user.id} onClick={deleteRow(id)}>
-                <img src="./images/trash.svg" alt="Trash icon" />
-            </button>
-            </td>
-        `;
+                <td>${i + 1}.</td>
+                <td class="userName">${allData[i].name}</td>
+                <td class="userSurname">${allData[i].surname}</td>
+                <td class="userPhone">${allData[i].phone}</td>
+                <td class="userMail">${allData[i].mail}</td>
+                <td>
+                <button class="editBtn" id=${allData[i].id} onClick={editRow(id)}>
+                    <img src="./images/pencil.svg" alt="Edit icon" />
+                </button>
+                <button class="deleteBtn" id=${allData[i].id} onClick={deleteRow(id)}>
+                    <img src="./images/trash.svg" alt="Trash icon" />
+                </button>
+                </td>
+            `;
 
-        // fill mobile cards
+        // fill cards
         cardsBox.innerHTML +=
             `
             <div class="card">
-                <p class="number">${ind + 1} .</p>
+                <p class="number">${i + 1} .</p>
                 <div class="details">
                 <div class="cardRow">
                     <span class="key">Name:</span>
-                    <span class="value">${user.name}</span>
+                    <span class="value">${allData[i].name}</span>
                 </div>
                 <div class="cardRow">
                     <span class="key">Surname:</span>
-                    <span class="value">${user.surname}</span>
+                    <span class="value">${allData[i].surname}</span>
                 </div>
                 <div class="cardRow">
                     <span class="key">Phone:</span>
-                    <span class="value">${user.phone}</span>
+                    <span class="value">${allData[i].phone}</span>
                 </div>
                 <div class="cardRow">
                     <span class="key">Mail:</span>
-                    <span class="value">${user.mail}</span>
+                    <span class="value">${allData[i].mail}</span>
                 </div>
                 </div>
                 <div class="actions">
-                <button class="editBtn" id=${user.id} onClick={editRow(id)}>Edit</button>
-                <button class="deleteBtn" id=${user.id} onClick={deleteRow(id)}>Delete</button>
+                <button class="editBtn" id=${allData[i].id} onClick={editRow(id)}>Edit</button>
+                <button class="deleteBtn" id=${allData[i].id} onClick={deleteRow(id)}>Delete</button>
                 </div>
             </div>
         `;
-    });
+    }
 }
 
 getAllData(BASE_API);
@@ -162,10 +179,10 @@ document.querySelector("#contactCreateForm").addEventListener("submit", async (e
     if (nameError === false && surnameError === false && phoneError === false && mailError === false) {
 
         body = {
-            name: valueName,
-            surname: valueSurname,
-            phone: valuePhone,
-            mail: valueMail,
+            name: valueName.toLowerCase(),
+            surname: valueSurname.toLowerCase(),
+            phone: valuePhone.toLowerCase(),
+            mail: valueMail.toLowerCase(),
         }
 
         await fetch(BASE_API, {

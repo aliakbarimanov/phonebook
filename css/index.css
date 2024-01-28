@@ -313,6 +313,9 @@ main .container .contactTable tbody tr td button:hover {
   background-color: #09111e;
   border: 1px solid #fff;
 }
+main .container .contactTable tbody tr td.userName, main .container .contactTable tbody tr td.userSurname {
+  text-transform: capitalize;
+}
 main .container .cardsBox {
   display: none;
 }
@@ -604,6 +607,7 @@ main .container .paginationBox.active {
   }
   main .container .cardsBox .card .details .cardRow span.value {
     font-weight: 600;
+    text-transform: capitalize;
     letter-spacing: 1px;
   }
   main .container .cardsBox .card .actions {
